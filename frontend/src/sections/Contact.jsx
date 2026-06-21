@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import SectionEyebrow from "../components/SectionEyebrow";
 import Reveal from "../components/Reveal";
 import { profile } from "../data/content";
+import emailjs from "@emailjs/browser";
 
 const CONTACT_ITEMS = [
   { icon: FiMail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
@@ -19,15 +20,38 @@ export default function Contact() {
   const [focused, setFocused] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    // Frontend-only form: no backend wired up yet.
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setForm({ name: "", email: "", message: "" });
-    }, 2600);
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      if (!form.name || !form.email || !form.message) return;
+
+      try {
+        await emailjs.send(
+        "service_7tugx6x",   //service id
+        "template_7vcis6p",   //template id
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        "B71fn5bJZHKJr314H"   //public key
+      );
+
+      setSubmitted(true);
+
+      setTimeout(() => {
+        setSubmitted(false);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      },7000);
+
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message.");
+    }
   };
 
   return (
@@ -110,9 +134,9 @@ export default function Contact() {
                     >
                       <FiCheck className="text-3xl text-blue" />
                     </motion.div>
-                    <h3 className="font-display text-xl font-semibold text-ink mb-1.5">Message Ready</h3>
+                    <h3 className="font-display text-xl font-semibold text-ink mb-1.5">Message Sent Successfully</h3>
                     <p className="text-sm text-slate">
-                      Thanks for reaching out — connect a backend or email link to send this live.
+                      Thank you for reaching out. I'll get back to you soon.
                     </p>
                   </motion.div>
                 ) : (
