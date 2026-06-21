@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import SectionEyebrow from "../components/SectionEyebrow";
 import Reveal from "../components/Reveal";
 import { profile } from "../data/content";
+import emailjs from "@emailjs/browser";
 
 const CONTACT_ITEMS = [
   { icon: FiMail, label: "Email", value: profile.email, href: `mailto:${profile.email}`, colorKey: "blue" },
