@@ -1,16 +1,59 @@
-# React + Vite
+# Niranjan G — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Premium, modern, responsive portfolio built with React, Vite, Tailwind CSS v4, and Framer Motion.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Open the URL Vite prints (usually `http://localhost:5173`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build for production
 
-## Expanding the ESLint configuration
+```bash
+npm run build
+npm run preview   # preview the production build locally
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The production build lands in `dist/`.
+
+## Project structure
+
+```
+src/
+  assets/        Profile image
+  components/    Reusable UI: Navbar, SplashScreen, Reveal, AnimatedCounter, etc.
+  sections/      Page sections: Hero, About, Skills, Projects, etc.
+  data/          content.js — all site copy & data lives here, edit this to update content
+  hooks/         useActiveSection (navbar highlight), useMouseParallax (hero parallax)
+public/
+  Niranjan_G_Resume.pdf   Downloadable resume (linked from Navbar + Hero)
+  favicon.svg             NG monogram favicon
+```
+
+## Editing content
+
+Almost everything — name, role, skills, projects, achievements, education, contact links —
+lives in `src/data/content.js`. Edit values there rather than digging through components.
+
+## Swapping the resume
+
+Replace `public/Niranjan_G_Resume.pdf` with your latest resume, keeping the same filename
+(or update `resumeUrl` in `src/data/content.js` if you rename it).
+
+## Adding real project images / live demo links
+
+Each project in `src/data/content.js` has a `demo: null` field — set it to a URL to enable
+the "Live Demo" button. Project cards currently use a generated gradient placeholder
+(`ProjectVisual` in `src/sections/Projects.jsx`); swap in real screenshots there when ready.
+
+## Notes
+
+- This is a frontend-only project — no backend, no API routes. The contact form shows a
+  success animation on submit but does not actually send email; wire it up to a service
+  like Formspree, EmailJS, or your own backend when ready.
+- Splash screen plays on every full page load/refresh (by design, per the brief).
+- Color tokens, fonts, and animation keyframes are defined in `src/index.css` under `@theme`.
