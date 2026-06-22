@@ -1,0 +1,38 @@
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+
+/**
+ * A button that subtly follows the cursor within its bounds on hover,
+ * giving a premium "magnetic" feel. Falls back to a normal button on touch devices.
+ */
+export default function MagneticButton({ as: Component = "a", className = "", children, strength = 0.35, ...props }) {
+  const ref = useRef(null);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const relX = e.clientX - (rect.left + rect.width / 2);
+    const relY = e.clientY - (rect.top + rect.height / 2);
+    setOffset({ x: relX * strength, y: relY * strength });
+  };
+
+  const handleMouseLeave = () => setOffset({ x: 0, y: 0 });
+
+  const MotionComponent = motion[Component] || motion.a;
+
+  return (
+    <MotionComponent
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={{ x: offset.x, y: offset.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 12, mass: 0.5 }}
+      className={className}
+      {...props}
+    >
+      {children}
+    </MotionComponent>
+  );
+}
