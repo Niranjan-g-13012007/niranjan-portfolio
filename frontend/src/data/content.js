@@ -27,7 +27,7 @@ export const about = {
   college: "Kongu Engineering College",
   cgpa: "9.34",
   description:
-    "I'm Niranjan G, an Information Technology student at Kongu Engineering College passionate about software development, problem-solving, and building impactful digital solutions. With experience in MERN Stack development, Java, Python, databases, and data structures & algorithms, I enjoy transforming ideas into real-world applications. I am continuously learning, exploring new technologies, and creating projects that enhance my skills while solving practical challenges.",
+    "I'm an Information Technology student at Kongu Engineering College passionate about software development, problem-solving, and building impactful digital solutions. With experience in MERN Stack development, Java, Python, databases, and data structures & algorithms, I enjoy transforming ideas into real-world applications. I am continuously learning, exploring new technologies, and creating projects that enhance my skills while solving practical challenges.",
 };
 
 export const counters = [
@@ -92,14 +92,14 @@ export const codingProfiles = [
     platform: "LeetCode",
     description: "Competitive programming & DSA practice",
     summary: "Consistent problem-solving practice across arrays, trees, graphs, and dynamic programming.",
-    url: "https://leetcode.com/",
+    url: "https://leetcode.com/Niranjan_gobinathan",
     icon: "leetcode",
   },
   {
     platform: "GeeksforGeeks",
     description: "Algorithmic problem solving",
     summary: "600+ problems solved across GfG, LeetCode, and Codeforces combined — strong algorithmic foundation.",
-    url: "https://www.geeksforgeeks.org/",
+    url: "https://www.geeksforgeeks.org/niranjavwll?tab=activity",
     icon: "gfg",
   },
   {
@@ -130,7 +130,7 @@ export const projects = [
       "Remote appliance control",
     ],
     tech: ["IoT", "ESP32", "React", "Dashboard"],
-    github: "https://github.com/Niranjan-g-13012007",
+    github: "https://github.com/Niranjan-g-13012007/Smart-home-energy-Monitoring-System",
     demo: null,
     accent: "gold",
   },
@@ -145,7 +145,7 @@ export const projects = [
       "Hospital communication",
     ],
     tech: ["GPS", "IoT", "Real-time Dashboard"],
-    github: "https://github.com/Niranjan-g-13012007",
+    github: "https://github.com/Niranjan-g-13012007/MEDI-ROUTE---Smart-Ambulance-Traffic-Control-Alerting-System",
     demo: null,
     accent: "red",
   },
@@ -159,8 +159,8 @@ export const projects = [
       "Authority dashboard",
       "MongoDB integration",
     ],
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    github: "https://github.com/Niranjan-g-13012007",
+    tech: ["HTML", "CSS", "Node.js", "MongoDB", "Express"],
+    github: "https://github.com/Niranjan-g-13012007/CIVIC-CONNECT---Civic-Issue-Reporting-And-Resolution-System",
     demo: null,
     accent: "blue",
   },
@@ -175,7 +175,7 @@ export const projects = [
       "Business intelligence",
     ],
     tech: ["Python", "Pandas", "Streamlit", "SQL"],
-    github: "https://github.com/Niranjan-g-13012007",
+    github: "https://github.com/Niranjan-g-13012007/Restaurant-Menu-Performance-Analysis",
     demo: null,
     accent: "gold",
   },

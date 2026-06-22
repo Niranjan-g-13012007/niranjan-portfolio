@@ -82,7 +82,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
-        <SectionEyebrow command="curl -X POST /contact" title="Let's Connect" align="center" />
+        <SectionEyebrow command="curl -X POST /contact" align="center" />
 
         {/* Memorable centered CTA with word-by-word reveal and glow */}
         <div className="relative text-center -mt-2 mb-16 py-6">
