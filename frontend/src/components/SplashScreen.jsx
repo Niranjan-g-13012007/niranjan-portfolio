@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TOTAL_DURATION = 2800; // ms
+const TOTAL_DURATION = 3500; // ms
 
 export default function SplashScreen({ onFinish }) {
   const [stage, setStage] = useState(0);
@@ -123,7 +123,7 @@ export default function SplashScreen({ onFinish }) {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  Building Intelligent Digital Solutions
+                  
                 </motion.p>
               )}
             </AnimatePresence>
